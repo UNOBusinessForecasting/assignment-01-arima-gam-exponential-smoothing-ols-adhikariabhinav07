@@ -13,5 +13,5 @@ model = LinearGAM(s(0) + s(1) + s(2) + s(3) )
 modelFit = model.gridsearch(np.asarray(x), y)
 modelFit.summary()
 
-pred = gam.predict(744)
+pred = modelFit.predict(np.asarray(x) )
 pred
