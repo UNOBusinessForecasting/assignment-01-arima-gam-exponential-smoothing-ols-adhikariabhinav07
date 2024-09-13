@@ -5,6 +5,7 @@ import statsmodels.formula.api as smf
 import statsmodels.tsa.stattools as st
 import plotly.express as px
 import patsy as pt
+from pygam import LinearGAM, s, f
 
 train_data = pd.read_csv(
     "https://github.com/dustywhite7/econ8310-assignment1/raw/main/assignment_data_train.csv")
