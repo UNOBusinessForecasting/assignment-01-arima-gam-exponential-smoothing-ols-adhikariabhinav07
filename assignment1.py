@@ -10,7 +10,7 @@ model = LinearGAM(s(0) + s(1) + s(2))
 modelFit = model.gridsearch(np.asarray(x), y)
 
 
-pred = modelFit.predict(np.asarray())
+pred = modelFit.predict(np.asarray(x))
 
 print(modelFit.summary())
-pred
+print(pred.summary(744))
