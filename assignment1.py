@@ -10,5 +10,9 @@ model = LinearGAM(s(0) + s(1) + s(2))
 modelFit = model.gridsearch(np.asarray(x), y)
 print(modelFit.summary())
 
-pred = modelFit.predict(np.asarray(x))
-print(pred.summary(744))
+test_data = pd.read_csv("https://github.com/dustywhite7/econ8310-assignment1/raw/main/assignment_data_test.csv")
+test_data = test_data.loc[(test_data['month'] == 1)] 
+x_test = test_data[['hour', 'day', 'month']]
+
+pred = modelFit.predict(np.asarray(x_test))
+print(pred.summary())
