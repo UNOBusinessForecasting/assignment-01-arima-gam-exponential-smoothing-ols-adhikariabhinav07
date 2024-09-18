@@ -8,9 +8,7 @@ x = train_data[['hour', 'day', 'month']]
 y = train_data['trips']
 model = LinearGAM(s(0) + s(1) + s(2))
 modelFit = model.gridsearch(np.asarray(x), y)
-
+print(modelFit.summary())
 
 pred = modelFit.predict(np.asarray(x))
-
-print(modelFit.summary())
 print(pred.summary(744))
