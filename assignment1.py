@@ -15,4 +15,4 @@ test_data = test_data.loc[(test_data['month'] == 1)]
 x_test = test_data[['hour', 'day', 'month']]
 
 pred = modelFit.predict(np.asarray(x_test))
-print(pred.summary())
+pred
